@@ -11,7 +11,9 @@ using namespace std;
         unsigned int count; // count
 
     public:
-        Counter():count(0)  //constructor
+        Counter():count(0)  //constructor no  arguments
+        {};
+        Counter (int c):count(c) //constructor with one argument
         {};
 
         unsigned int get_count() //return count
@@ -22,9 +24,8 @@ using namespace std;
         Counter operator ++()   //increment prefix
         {
             ++count;
-            Counter temp;
-            temp.count = count;
-            return temp;
+
+            return Counter(count);
 
         }
     };
